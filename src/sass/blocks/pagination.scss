@@ -1,0 +1,129 @@
+.pagintaion {
+  display: flex;
+}
+
+.pagination__list {
+  display: flex;
+  justify-content: center;
+
+  @media (min-width: $tablet-width) {
+    justify-content: end;
+  }
+}
+
+.pagination__list--first-page {
+  .pagination__arrow--back {
+    display: none;
+  }
+}
+
+.pagination__list--last-page {
+  .pagination__arrow--next {
+    display: none;
+  }
+}
+
+.pagination__link {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: $primary-color;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  background-color: $basic-white;
+  border-radius: 4px;
+  transition: $basic-animation;
+  cursor: pointer;
+}
+
+.pagination__link:not(.pagination__link--current):hover {
+  background-color: $primary-color-light;
+  color: $basic-white;
+}
+
+.pagination__link:not(.pagination__link--current):active {
+  background-color: $primary-color-dark;
+  color: $basic-white;
+}
+
+.pagination__link:disabled {
+  background-color: $basic-grey;
+}
+
+.pagination__item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.pagination__arrow {
+  display: block;
+  width: 40px;
+  height: 40px;
+  padding: 8px 20px;
+  position: relative;
+
+  &::after {
+    @include pseudo();
+    top: 21px;
+    left: 16px;
+    width: 6px;
+    height: 1.5px;
+    background-color: $primary-color;
+    transform: rotate(45deg);
+  }
+
+  &::before {
+    @include pseudo();
+    top: 17px;
+    left: 17px;
+    width: 5px;
+    height: 1.5px;
+    background-color: $primary-color;
+    transform: rotate(-45deg);
+  }
+
+  @media (min-width: $tablet-width) {
+    width: auto;
+    height: auto;
+
+    &::after,
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.pagination__arrow:hover,
+.pagination__arrow:active {
+  &::after,
+  &::before {
+    background-color: $basic-white;
+  }
+}
+
+.pagination__arrow--next {
+  transform: scale(-1, 1);
+
+  @media (min-width: $tablet-width) {
+    transform: none;
+  }
+}
+
+.pagination__link--current {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: $basic-black;
+  background-color: transparent;
+}
+
+.pagination__text {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+  }
+}

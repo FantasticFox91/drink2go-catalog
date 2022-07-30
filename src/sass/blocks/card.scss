@@ -1,0 +1,145 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 40px 20px 20px;
+  background-color: $basic-white;
+  cursor: pointer;
+  transition: $basic-animation;
+
+  @media (min-width: $tablet-width) {
+    padding: 50px 30px 30px;
+  }
+}
+
+.card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card:not(:last-child) {
+  margin-bottom: 20px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 0;
+  }
+}
+
+.card__image {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 12px;
+  object-fit: contain;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 16px;
+  }
+}
+
+.card__heading {
+  margin: 0;
+  margin-bottom: 4px;
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: 700;
+
+  @media (min-width: $tablet-width) {
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 8px;
+  }
+}
+
+.card__text {
+  margin: 0;
+  margin-bottom: 16px;
+  font-weight: 400;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 20px;
+  }
+}
+
+.card__bottom {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+
+  @media (min-width: $desktop-width) {
+    margin-top: auto;
+    align-items: center;
+  }
+}
+
+.card__price {
+  margin-top: 2px;
+  margin-left: -2px;
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 600;
+}
+
+.card__button {
+  position: relative;
+  padding: 8px 20px 8px 46px;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 20px;
+
+  &::after {
+    @include pseudo();
+    top: 10px;
+    left: 20px;
+    width: 20px;
+    height: 16px;
+    background-image: url("../img/add-to-cart.svg");
+  }
+}
+
+.card__button--inCart {
+  background-color: $basic-green;
+  padding: 8px 32.5px;
+
+  &::after {
+    display: none;
+  }
+
+  &:hover {
+    background-color: $basic-green-light;
+  }
+}
+
+.card__tooltip {
+  display: none;
+  position: absolute;
+  bottom: -90px;
+  right: -100px;
+  width: 240px;
+  padding: 10px;
+  border: 2px solid $basic-black;
+  border-radius: 4px;
+  background-color: $basic-white;
+
+  &::after {
+    @include pseudo();
+    top: -7px;
+    right: calc(50% - 5px);
+    width: 10px;
+    height: 10px;
+    border: solid $basic-black;
+    border-width: 0 3px 3px 0;
+    transform: rotate(-135deg);
+  }
+}
+
+.card__tooltip-text {
+  margin: 0;
+}
+
+.item-count__button:disabled:hover + .card__tooltip {
+  display: block;
+}
+
+.card__button:disabled:hover + .card__tooltip {
+  display: block;
+}

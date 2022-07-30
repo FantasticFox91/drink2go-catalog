@@ -1,0 +1,134 @@
+.filters {
+  padding-bottom: 36px;
+
+  @media (min-width: $tablet-width) {
+    display: grid;
+    padding-bottom: 39px;
+    grid-template-columns: minmax(225px, 1fr) 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 11px;
+  }
+
+  @media (min-width: $desktop-width) {
+    min-width: 318px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.filters__group {
+  padding: 0;
+  border: none;
+
+  @media (min-width: $tablet-width) {
+    margin: 0;
+  }
+
+  @media (min-width: 900px) {
+    justify-self: center;
+  }
+
+  @media (min-width: $tablet-width) {
+    margin: 0 2px;
+  }
+}
+
+.filters__title {
+  margin-bottom: 20px;
+  margin-left: -2px;
+  padding: 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.filters__title--price {
+  margin-bottom: 21px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 22px;
+  }
+}
+
+.filters__list {
+  margin-left: -2px;
+  margin-bottom: 24px;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 19px;
+  }
+}
+
+.filters__list:last-child {
+  @media (min-width: $desktop-width) {
+    margin-bottom: 21px;
+  }
+}
+
+.filters__item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.filters__button {
+  @include fonts($main-font, 16px, 24px, 400, $primary-color);
+
+  width: 100%;
+  margin-top: 5px;
+  padding: 8px 5px;
+  text-align: center;
+  background-color: $basic-white;
+  border: none;
+  cursor: pointer;
+  transition: $basic-animation;
+
+  @media (min-width: $tablet-width) {
+    max-width: 222px;
+    justify-self: center;
+    grid-column: span 3;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-width: 100%;
+  }
+}
+
+.filters__label--min {
+  position: relative;
+  margin-right: 30px;
+
+  &::after {
+    @include pseudo();
+    top: calc(50% - 1px);
+    right: -20px;
+    width: 10px;
+    height: 2px;
+    background-color: $basic-grey;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-right: 50px;
+
+    &::after {
+      top: 48%;
+      right: -30px;
+    }
+  }
+}
+
+.filters__button:hover {
+  background-color: $primary-color-light;
+  color: $basic-white;
+}
+
+.filters__search {
+  width: 100%;
+  margin-bottom: 22px;
+  padding: 8px 20px;
+  font: inherit;
+  font-weight: 500;
+  border: 2px solid $primary-color;
+  border-radius: 4px;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+}

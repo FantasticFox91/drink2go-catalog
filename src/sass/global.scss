@@ -1,0 +1,41 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @include fonts();
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  min-width: 320px;
+  background-color: $basic-white;
+  overflow-x: hidden;
+
+  @media (min-width: $tablet-width) {
+    font-size: $main-font-size;
+    line-height: $main-line-height;
+    background-color: $basic-white;
+  }
+}
+
+.body--lock {
+  overflow-y: hidden;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}

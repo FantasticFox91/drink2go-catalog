@@ -1,0 +1,124 @@
+.top-menu__button-text {
+  display: none;
+
+  @media (min-width: $desktop-width) {
+    @include fonts($main-font, 12px, 16px, 500);
+    display: block;
+    margin-left: 15px;
+    text-transform: uppercase;
+  }
+}
+
+.top-menu__wrapper {
+  @media (min-width: $tablet-width) {
+    position: static;
+    display: flex;
+    margin-right: 0;
+    order: 2;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-right: 62px;
+  }
+}
+
+.top-menu__container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-right: 0;
+  width: 100%;
+  justify-content: space-between;
+
+  @media (min-width: $tablet-width) {
+    justify-content: start;
+    padding-right: 20px;
+  }
+}
+
+.top-menu__links-list {
+  @media (min-width: $tablet-width) {
+    padding-right: 0;
+  }
+}
+
+.top-menu__button {
+  background-color: transparent;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+
+  @media (min-width: $tablet-width) {
+    height: 80px;
+  }
+
+  @media (min-width: $desktop-width) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 112px;
+  }
+}
+
+.top-menu__button:hover {
+  @media (min-width: $desktop-width) {
+    .top-menu__button-text {
+      color: $primary-color;
+    }
+
+    .top-menu__icon {
+      fill: $primary-color;
+    }
+  }
+}
+
+.top-menu__button:active {
+  background-color: $secondary-color;
+}
+
+.top-menu__logo {
+  @media (min-width: $tablet-width) {
+    margin-right: 30px;
+    order: 1;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-right: 126px;
+  }
+}
+
+.top-menu__button--user {
+  @media (min-width: $tablet-width) {
+    margin-left: auto;
+    order: 3;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-left: 0;
+    margin-right: 29px;
+  }
+}
+
+.top-menu__button--cart {
+  position: relative;
+  z-index: 2;
+
+  @media (min-width: $tablet-width) {
+    order: 4;
+  }
+
+  .top-menu__button-count {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 20px;
+    font: inherit;
+    font-size: 12px;
+    border: 2px solid $primary-color;
+    border-radius: 50%;
+    background-color: $basic-white;
+    z-index: 0;
+  }
+}

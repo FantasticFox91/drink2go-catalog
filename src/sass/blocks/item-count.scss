@@ -1,0 +1,63 @@
+.item-count {
+  display: flex;
+  justify-content: center;
+  min-height: 36px;
+}
+
+.item-count__number {
+  width: 75px;
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  outline: none;
+  font: inherit;
+}
+
+.item-count__button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background-color: $basic-green-light;
+  cursor: pointer;
+  transition: $basic-animation;
+  border-radius: 4px;
+
+  &::after,
+  &::before {
+    @include pseudo();
+  }
+}
+
+.item-count__button:hover {
+  background-color: $basic-green;
+}
+
+.item-count__button:disabled {
+  background-color: $basic-grey;
+}
+
+.item-count__button--minus {
+  &::after {
+    width: 10px;
+    height: 2px;
+    background-color: $basic-white;
+  }
+}
+
+.item-count__button--plus {
+  &::after {
+    width: 10px;
+    height: 2px;
+    background-color: $basic-white;
+  }
+
+  &::before {
+    width: 2px;
+    height: 10px;
+    background-color: $basic-white;
+  }
+}

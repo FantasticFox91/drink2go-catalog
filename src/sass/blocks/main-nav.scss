@@ -1,0 +1,126 @@
+.main-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+
+  @media (min-width: $desktop-width) {
+    justify-content: start;
+  }
+}
+
+.main-nav__logo {
+  align-self: center;
+}
+
+.main-nav__toggle {
+  display: none;
+
+  @media (max-width: 767px) {
+    display: block;
+    position: relative;
+    z-index: 5;
+
+    &::before {
+      position: absolute;
+      top: calc(50% - 8px);
+      left: calc(50% - 8px);
+      width: 16px;
+      height: 1.5px;
+      background-color: $basic-black;
+      box-shadow: 0 5px 0 0 $basic-black;
+      content: "";
+      transition: $basic-animation;
+    }
+
+    &::after {
+      position: absolute;
+      top: calc(50% + 2px);
+      left: calc(50% - 8px);
+      width: 16px;
+      height: 1.5px;
+      background-color: $basic-black;
+      content: "";
+      transition: $basic-animation;
+    }
+  }
+}
+
+.main-nav__wrapper {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  display: flex;
+  width: 100%;
+  background-color: $basic-white;
+  z-index: 5;
+  transition: $basic-animation;
+
+  @media (min-width: $tablet-width) {
+    position: static;
+    display: flex;
+    width: auto;
+    flex-direction: row;
+  }
+}
+
+.main-nav__toggle--noJS {
+  display: none;
+
+  & + .main-nav__wrapper {
+    position: static;
+    display: flex;
+    width: 280px;
+  }
+
+  @media (min-width: $tablet-width) {
+    & + .main-nav__wrapper {
+      display: flex;
+      width: auto;
+    }
+  }
+}
+
+.main-nav__toggle--close {
+  &::before {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: calc(50% - 8px);
+    width: 16px;
+    height: 1.5px;
+    background-color: $basic-black;
+    box-shadow: 0 5px 0 0 $basic-black;
+    content: "";
+    transition: $basic-animation;
+  }
+
+  &::after {
+    position: absolute;
+    top: calc(50% + 2px);
+    left: calc(50% - 8px);
+    width: 16px;
+    height: 1.5px;
+    background-color: $basic-black;
+    content: "";
+    transition: $basic-animation;
+  }
+}
+
+.main-nav__toggle--open {
+  &::before {
+    box-shadow: none;
+    top: 27px;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    top: 27px;
+    left: 21px;
+    transform: rotate(-45deg);
+  }
+
+  & + .main-nav__wrapper {
+    top: 60px;
+  }
+}

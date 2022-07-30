@@ -1,0 +1,154 @@
+.range {
+  margin-bottom: 25px;
+  padding-top: 8px;
+  width: 100%;
+  overflow: visible;
+
+  @media (min-width: $tablet-width) {
+    max-width: 223px;
+    padding-top: 9px;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-width: 318px;
+    margin-bottom: 19px;
+  }
+}
+
+.range__scale {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 2px;
+  margin-bottom: 33px;
+  background-color: $light-grey;
+}
+
+.range__bar {
+  position: absolute;
+  left: 0;
+  width: 90%;
+  height: 4px;
+  background-color: $primary-color-light;
+}
+
+.range__toggle {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: $basic-white;
+  border: 2px solid $primary-color-light;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: $basic-animation;
+
+  &::after {
+    @include pseudo();
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: $basic-animation;
+  }
+}
+
+.range__toggle:hover::after {
+  background-color: $primary-color-opacity;
+}
+
+.range__toggle:active::after {
+  background-color: $primary-color;
+}
+
+.range__toggle-min {
+  top: -10px;
+  left: -2px;
+}
+
+.range__toggle-max {
+  top: -10px;
+  right: -8px;
+
+  @media (min-width: $tablet-width) {
+    right: -2px;
+  }
+
+  @media (min-width: $desktop-width) {
+    right: -13px;
+  }
+}
+
+.range__wrapper-inputs {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: -2px;
+  margin-bottom: 25px;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 20px;
+  }
+}
+
+.range__input {
+  @include fonts($main-font, 16px, 20px, 500);
+
+  width: 125px;
+  padding: 8px 10px;
+  text-align: center;
+  border: 2px solid $primary-color-light;
+  border-radius: 4px;
+  background-color: transparent;
+  appearance: textfield;
+
+  @media (min-width: $tablet-width) {
+    width: 96px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 134px;
+  }
+}
+
+.range__input:active {
+  border-color: $primary-color-dark;
+}
+
+.range__input:focus {
+  outline: none;
+  border-color: $primary-color-dark;
+}
+
+.range__input::placeholder {
+  color: $basic-grey;
+}
+
+.range__input:disabled {
+  border-color: $basic-grey;
+}
+
+.range__input::-webkit-outer-spin-button,
+.range__input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.range--disable {
+  .range__bar {
+    background-color: $basic-grey;
+  }
+
+  .range__toggle {
+    border-color: $basic-grey;
+  }
+
+  .range__toggle:active::after {
+    background-color: transparent;
+  }
+
+  .range__toggle:hover::after {
+    background-color: transparent;
+  }
+}

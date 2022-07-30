@@ -1,0 +1,63 @@
+.noUi-horizontal .noUi-handle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: $basic-white;
+  border: 2px solid $primary-color;
+  cursor: pointer;
+
+  &::after,
+  &::before {
+    display: none;
+  }
+
+  &:hover {
+    &::after,
+    &::before {
+      display: block;
+      width: 16px;
+      height: 16px;
+      top: 2px;
+      left: 2px;
+      background-color: $primary-color-opacity;
+      border-radius: 50%;
+    }
+  }
+
+  &:active {
+    &::after,
+    &::before {
+      background-color: $primary-color;
+    }
+  }
+}
+
+.noUi-horizontal {
+  height: 2px;
+  border: none;
+  background-color: $light-grey;
+}
+
+.noUi-connects {
+  height: 4px;
+}
+
+.noUi-connect {
+  background-color: $primary-color-light;
+}
+
+.noUi-target {
+  margin: 7px 0 34px 5px;
+}
+
+.noUi-target + .range__wrapper-inputs {
+  margin-bottom: 25px;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 19px;
+  }
+}

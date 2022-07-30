@@ -1,0 +1,160 @@
+.control {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.control:hover {
+  .control__mark {
+    border-color: $primary-color-light;
+  }
+
+  .control__label::after {
+    background-color: $primary-color-opacity;
+  }
+}
+
+.control__label {
+  margin: 0;
+  position: relative;
+  padding-left: 34px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  transition: $basic-animation;
+  cursor: pointer;
+
+  &::after {
+    @include pseudo();
+    top: calc(50% - 8px);
+    left: 4px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: $basic-animation;
+  }
+}
+
+.control__mark {
+  position: absolute;
+  display: block;
+  width: 24px;
+  height: 24px;
+  border: 2px solid $basic-grey;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: $basic-animation;
+}
+
+.control__input:checked + .control__mark {
+  border-color: $primary-color;
+}
+
+.control__input:checked ~ .control__label::after {
+  background-color: $primary-color;
+}
+
+.control__input:disabled:hover {
+  & + .control__mark {
+    border-color: $light-grey;
+  }
+
+  & ~ .control__label::after {
+    background-color: transparent;
+  }
+}
+
+.control__input:disabled:checked {
+  & + .control__mark {
+    border-color: $basic-grey;
+  }
+
+  & ~ .control__label::after {
+    background-color: $basic-grey;
+  }
+}
+
+.control__input:disabled {
+  & + .control__mark {
+    border-color: $light-grey;
+  }
+
+  & ~ .control__label {
+    color: $light-grey;
+  }
+}
+
+.control__input:disabled:checked:hover {
+  & ~ .control__label::after {
+    background-color: $basic-grey;
+  }
+}
+
+.control--checkbox {
+  .control__label {
+    padding-left: 52px;
+  }
+
+  .control__label::after {
+    width: 20px;
+    height: 20px;
+    top: calc(50% - 10px);
+    left: 2px;
+    background-color: $basic-white;
+  }
+
+  .control__mark {
+    width: 42px;
+    border-radius: 12px;
+    background-color: $basic-grey;
+  }
+
+  .control__input:checked + .control__mark {
+    background-color: $primary-color;
+  }
+
+  .control__input:checked ~ .control__label::after {
+    background-color: $basic-white;
+    left: 20px;
+  }
+}
+
+.control--checkbox:hover {
+  .control__mark {
+    background-color: $primary-color-opacity;
+  }
+
+  .control__label::after {
+    background-color: $basic-white;
+  }
+}
+
+.control--checkbox .control__input:disabled {
+  & + .control__mark {
+    background-color: $light-grey;
+  }
+
+  & ~ .control__label::after {
+    background-color: $basic-white;
+  }
+}
+
+.control--checkbox:hover .control__input:disabled {
+  & + .control__mark {
+    background-color: $light-grey;
+  }
+
+  & ~ .control__label::after {
+    background-color: $basic-white;
+  }
+}
+
+.control--checkbox .control__input:disabled:checked {
+  & + .control__mark {
+    border-color: $light-grey;
+  }
+
+  & ~ .control__label::after {
+    background-color: $basic-grey;
+  }
+}

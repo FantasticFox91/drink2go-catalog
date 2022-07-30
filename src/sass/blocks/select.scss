@@ -1,0 +1,46 @@
+.select {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 22px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+
+  @media (min-width: $tablet-width) {
+    justify-content: end;
+  }
+}
+
+.select__heading {
+  margin: 0;
+  font: inherit;
+}
+
+.select__option {
+  margin: 0;
+  padding: 0 20px;
+  font-weight: 600;
+  color: $primary-color;
+  border: none;
+  background-color: transparent;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+
+  @media (min-width: $tablet-width) {
+    padding-left: 21px;
+  }
+}
+
+
+.select__option--selected {
+  padding: 0 30px 0 19px;
+  font-weight: 600;
+  border-radius: 4px;
+  background: url("../img/arrow-up.svg") no-repeat 94% 50%;
+  cursor: pointer;
+
+  @media (min-width: $tablet-width) {
+    padding-left: 21px;
+  }
+}

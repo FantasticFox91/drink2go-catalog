@@ -1,0 +1,28 @@
+$tablet-width: 768px;
+$desktop-width: 1440px;
+
+// Colors
+
+$basic-white: #ffffff;
+$basic-grey: #bdbdbd;
+$basic-black: #333333;
+$primary-color: #7859cf;
+$secondary-color: #f0ebff;
+$primary-color-opacity: rgba(120, 89, 207, 0.25);
+$primary-color-light: #9070ec;
+$primary-color-dark: #593cac;
+$light-grey: #e2e2e2;
+$lightest-grey: #f8f8f8;
+$flat-white: #f3ebe1;
+$lavander-latte: #eae6fc;
+$espresso-color: #e5e6e8;
+$basic-green: #5c9d4c;
+$basic-green-light: #6bbd57;
+
+$basic-animation: all 0.4s cubic-bezier(0.1, 0.82, 0.76, 0.96);
+
+// Fonts
+
+$main-font: "Montserrat", sans-serif;
+$main-font-size: 14px;
+$main-line-height: 20px;

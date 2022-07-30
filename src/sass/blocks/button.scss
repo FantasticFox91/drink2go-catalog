@@ -1,0 +1,26 @@
+.button {
+  @include fonts($main-font, 16px, 24px, 400, $basic-white);
+
+  padding: 9px 20px 7px;
+  border: none;
+  background-color: $primary-color;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: $basic-animation;
+}
+
+.button:hover {
+  background-color: $primary-color-light;
+}
+
+.button:active {
+  background-color: $primary-color-dark;
+}
+
+button:disabled {
+  background-color: $basic-grey;
+}
+
+button:disabled:hover {
+  background-color: $basic-grey;
+}

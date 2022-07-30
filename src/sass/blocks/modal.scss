@@ -1,0 +1,90 @@
+.modal {
+  position: fixed;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.modal__container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 29px 0 46px;
+  background-color: $basic-white;
+  box-shadow: 0 5px 10px rgba(0, 1, 1, 0.25);
+  transform: translate(-50%, -50%);
+
+  @media (min-width: $tablet-width) {
+    min-width: 566px;
+    padding-top: 37px;
+    padding-bottom: 45px;
+  }
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (min-width: $tablet-width) {
+    padding: 0 55px;
+  }
+}
+
+.modal__heading {
+  margin-bottom: 15px;
+  padding: 0 50px 0 59px;
+  text-transform: uppercase;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 13px;
+    padding: 0;
+    text-align: center;
+    font-size: 30px;
+    line-height: 57px;
+  }
+}
+
+.modal__inner-container {
+  position: relative;
+}
+
+.modal__close-button {
+  position: absolute;
+  top: -45px;
+  right: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  border: 2px solid $basic-black;
+  border-radius: 50%;
+  background-color: $basic-white;
+  cursor: pointer;
+
+  &::after,
+  &::before {
+    @include pseudo();
+    width: 10px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: $basic-black;
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+}
+
+.modal__text {
+  margin: 0;
+  text-align: center;
+  font-weight: 400;
+}
